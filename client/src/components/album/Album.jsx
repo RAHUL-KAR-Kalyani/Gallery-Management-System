@@ -13,7 +13,6 @@ const Album = () => {
 
     const { user } = useSelector((store) => store.auth);
     const { albums } = useSelector((store) => store.album);
-    console.log(albums);
     const [message, setMessage] = useState('');
     const [spinning, setSpinning] = useState(false);
 
