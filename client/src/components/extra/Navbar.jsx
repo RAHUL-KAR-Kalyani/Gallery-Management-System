@@ -108,11 +108,11 @@ const Navbar = ({ toggleSidebar }) => {
                                     </div>
 
                                     <ul className="py-2 text-sm">
-                                        <li>
+                                        {/* <li>
                                             <Link to="/profile" onClick={() => setIsDropdownOpen(false)} className="block px-4 py-2 hover:bg-gray-100 transition">
                                                 Settings
                                             </Link>
-                                        </li>
+                                        </li> */}
 
                                         <li>
                                             <button onClick={handleLogout} className="w-full text-left px-4 py-2 hover:bg-red-50 text-red-600 transition cursor-pointer">
