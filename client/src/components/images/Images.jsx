@@ -16,7 +16,6 @@ const Images = () => {
 
     const { user } = useSelector((store) => store.auth);
     const { images } = useSelector((store) => store.image);
-    console.log(images);
     const [message, setMessage] = useState('');
     const [spinning, setSpinning] = useState(false);
 
