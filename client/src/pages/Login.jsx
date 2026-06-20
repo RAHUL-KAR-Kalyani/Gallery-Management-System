@@ -28,7 +28,6 @@ const Login = () => {
     const submitHandler = async (data) => {
         try {
             dispatch(setLoading(true));
-            console.log('API URL:', import.meta.env.VITE_USER_ENDPOINT);
 
             const response = await axios.post(`${import.meta.env.VITE_USER_ENDPOINT}/login`, data,
                 {
@@ -36,16 +35,13 @@ const Login = () => {
                     withCredentials: true,
                 }
             );
-            // console.log(response.data);
-            console.log("API URL 2:", import.meta.env.VITE_USER_ENDPOINT);
             if (response.data.success) {
                 dispatch(setUser(response.data.user));
                 navigate('/home');
 
                 if (response.data.user.role === "user") {
                     navigate('/home');
-                }
-                
+                }                
                 toast.success(response.data.message);
             }
         } catch (error) {
