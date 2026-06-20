@@ -48,15 +48,15 @@ const CreateAlbum = () => {
                     initialQuality: 0.9,
                 });
 
-                console.log("Original Cover Size:", (coverImage.size / 1024 / 1024).toFixed(2), "MB");
-                console.log("Compressed Cover Size:", (compressedCover.size / 1024 / 1024).toFixed(2), "MB");
+                // console.log("Original Cover Size:", (coverImage.size / 1024 / 1024).toFixed(2), "MB");
+                // console.log("Compressed Cover Size:", (compressedCover.size / 1024 / 1024).toFixed(2), "MB");
                 data.append("coverImage", compressedCover);
             }
 
             const response = await axios.post(`${import.meta.env.VITE_ALBUM_ENDPOINT}/create`, data, { withCredentials: true });
 
             if (response.data.success) {
-                console.log(response)
+                // console.log(response)
                 toast.success(response?.data?.message);
                 navigate("/albums");
             }
@@ -67,28 +67,7 @@ const CreateAlbum = () => {
             setLoading(false);
         }
     };
-
-    // const submitHandler = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         setLoading(true);
-    //         const data = new FormData();
-    //         data.append("name", formData.name);
-    //         data.append("description", formData.description);
-    //         data.append("coverImage", coverImage);
-
-    //         const response = await axios.post(`${import.meta.env.VITE_ALBUM_ENDPOINT}/create`, data, { withCredentials: true, });
-
-    //         if (response.data.success) {
-    //             toast.success(response.data.message);
-    //             navigate("/albums");
-    //         }
-    //     } catch (error) {
-    //         toast.error(error?.response?.data?.message);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
+    
 
     return (
         <div className="min-h-screen bg-gray-50 flex justify-center py-10 px-4">

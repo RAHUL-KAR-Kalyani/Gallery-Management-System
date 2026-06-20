@@ -23,7 +23,7 @@ const useGetOwnIMages = () => {
 
                 if (response?.data?.success) {
                     dispatch(setImages(response?.data?.images))
-                    console.log(response.data.images, "Fetched own images");
+                    // console.log(response.data.images, "Fetched own images");
                 }
 
             } catch (error) {

@@ -54,36 +54,6 @@ const ImageUpdate = () => {
         }
     };
 
-    // const submitHandler = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         setLoading(true);
-    //         const formData = new FormData();
-    //         formData.append("title", input.title);
-    //         formData.append("tags", input.tags);
-    //         if (input.image instanceof File) {
-    //             formData.append("image", input.image);
-    //         }
-
-    //         const response = await axios.put(`${import.meta.env.VITE_IMAGE_ENDPOINT}/update/${id}`, formData, { withCredentials: true });
-
-    //         if (response.data.success) {
-    //             dispatch(updateImages({ id, updatedImage: response.data.image }));
-    //             console.log(response.data.message);
-    //             navigate('/images');
-    //             toast.success(response.data.message);
-    //         }
-
-    //     } catch (error) {
-    //         console.error(error);
-    //         toast.error(error.response?.data?.message);
-
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // }
-
-
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -103,8 +73,8 @@ const ImageUpdate = () => {
                 };
 
                 const compressedFile = await imageCompression(input.image,options);
-                console.log("Original Size:", (input.image.size / 1024 / 1024).toFixed(2), "MB");
-                console.log("Compressed Size:", (compressedFile.size / 1024 / 1024).toFixed(2), "MB");
+                // console.log("Original Size:", (input.image.size / 1024 / 1024).toFixed(2), "MB");
+                // console.log("Compressed Size:", (compressedFile.size / 1024 / 1024).toFixed(2), "MB");
                 formData.append("image", compressedFile);
             }
 

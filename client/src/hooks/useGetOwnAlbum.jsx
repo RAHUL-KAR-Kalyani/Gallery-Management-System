@@ -24,7 +24,7 @@ const useGetOwnAlbum = () => {
                 let response = await axios.get(`${import.meta.env.VITE_ALBUM_ENDPOINT}/get/user/${user._id}`, { withCredentials: true });
                 
                 if (response?.data?.success) {
-                    console.log(response?.data, " albums to dispatch");
+                    // console.log(response?.data, " albums to dispatch");
                     dispatch(setAlbums(response?.data?.albums))
                 }
 

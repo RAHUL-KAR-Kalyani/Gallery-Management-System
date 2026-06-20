@@ -18,11 +18,11 @@ const AlbumTable = () => {
             if (!searchAlbumbyname) return true;
             return item.title.toLowerCase().includes(searchAlbumbyname.toLowerCase());
         });
-        console.log(filtered, 'filtered');
+        // console.log(filtered, 'filtered');
 
         setFilteredAlbum(filtered);
     }, [albums, searchAlbumbyname]);
-    console.log(filteredAlbum, 'filteredAlbums');
+    // console.log(filteredAlbum, 'filteredAlbums');
 
     // const moveToDetails=(id)=>{
     //     navigate(`/albums/${id}`);

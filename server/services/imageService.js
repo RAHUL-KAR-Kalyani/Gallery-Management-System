@@ -29,7 +29,7 @@ const uploadImageService = async (file, body, userId) => {
 
     // validate album id if provided
     let albumId = null;
-    console.log("Album ID: ", body);
+    // console.log("Album ID: ", body);
 
     if (body.album) {
         // check valid mongoose id

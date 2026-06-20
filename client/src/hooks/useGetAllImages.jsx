@@ -21,18 +21,12 @@ const useGetAllImages = () => {
             try {
                 let response;
                 if (!isAdmin) {
-                    // const matchingUser = user?.find(u => u._id === user._id);
-                    // if (!matchingUser) return;
-                    // console.log("userid", matchingUser._id);
-                    // response = await axios.get(`${import.meta.env.VITE_IMAGE_ENDPOINT}/get/user/${matchingUser._id}`, { withCredentials: true });
-                    // console.log(response?.data?.images, " images for user");
-                    
-                    console.log("userid", user._id);
+                    // console.log("userid", user._id);
                     response = await axios.get(`${import.meta.env.VITE_IMAGE_ENDPOINT}/get/user/${user._id}`,{ withCredentials: true });
                 }
                 else {
                     response = await axios.get(`${import.meta.env.VITE_IMAGE_ENDPOINT}/get`, { withCredentials: true });
-                    console.log(response?.data?.images, " all images for admin");
+                    // console.log(response?.data?.images, " all images for admin");
                 }
 
                 if (response?.data?.success) {

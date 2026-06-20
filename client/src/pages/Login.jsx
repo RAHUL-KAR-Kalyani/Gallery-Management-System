@@ -36,7 +36,7 @@ const Login = () => {
                     withCredentials: true,
                 }
             );
-            console.log(response.data);
+            // console.log(response.data);
             console.log("API URL 2:", import.meta.env.VITE_USER_ENDPOINT);
             if (response.data.success) {
                 dispatch(setUser(response.data.user));
@@ -49,9 +49,9 @@ const Login = () => {
                 toast.success(response.data.message);
             }
         } catch (error) {
-            console.log(error);
-            console.log("REQUEST:", error.request);
-            console.log(error.response);
+            // console.log(error);
+            // console.log("REQUEST:", error.request);
+            // console.log(error.response);
             toast.error(error.response?.data?.message);
         } finally {
             dispatch(setLoading(false));

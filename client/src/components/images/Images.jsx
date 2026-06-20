@@ -24,7 +24,7 @@ const Images = () => {
         setSpinning(true);
         setTimeout(() => setSpinning(false), 2000);
         setMessage('Refresh Button clicked!');
-        console.log(message)
+        // console.log(message)
     }
 
     useGetOwnIMages();

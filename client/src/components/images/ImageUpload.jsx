@@ -43,31 +43,6 @@ const ImageUpload = () => {
 		setInput({ ...input, [name]: value });
 	}
 
-	// const handleSubmit = async (e) => {
-	// 	e.preventDefault();
-	// 	setLoading(true);
-	// 	console.log(input);
-	// 	try {
-	// 		const formData = new FormData();
-	// 		formData.append("image", input.image);
-	// 		formData.append("title", input.title);
-	// 		formData.append("tags", input.tags);
-
-	// 		// Implement image upload logic here
-
-	// 		const response = await axios.post(`http://localhost:8000/image/upload`, formData, { withCredentials: true });
-	// 		if (response.data.success) {
-	// 			dispatch(uploadImages([response.data.image]));
-	// 			toast.success("Image uploaded successfully!");
-	// 		}
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 		toast.error(error.response?.data?.message || "Failed to upload image. Please try again.");
-	// 	} finally {
-	// 		setLoading(false);
-	// 	}
-	// }
-
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -89,8 +64,8 @@ const ImageUpload = () => {
 			// Compress image
 			const compressedFile = await imageCompression(input.image, options);
 
-			console.log("Original Size:", (input.image.size / 1024 / 1024).toFixed(2), "MB");
-			console.log("Compressed Size:", (compressedFile.size / 1024 / 1024).toFixed(2), "MB");
+			// console.log("Original Size:", (input.image.size / 1024 / 1024).toFixed(2), "MB");
+			// console.log("Compressed Size:", (compressedFile.size / 1024 / 1024).toFixed(2), "MB");
 
 			const formData = new FormData();
 			formData.append("image", compressedFile);
@@ -104,10 +79,10 @@ const ImageUpload = () => {
 			}
 
 			const response = await axios.post(`${import.meta.env.VITE_IMAGE_ENDPOINT}/upload`, formData, { withCredentials: true });
-			console.log(response.data, "response from server");
+			// console.log(response.data, "response from server");
 			if (response.data.success) {
 				dispatch(uploadImages([response.data.image]));
-				console.log(response.data.image);
+				// console.log(response.data.image);
 				toast.success("Image uploaded successfully!");
 				// Reset form
 				setInput({ image: null, title: '', tags: '', album: '' });

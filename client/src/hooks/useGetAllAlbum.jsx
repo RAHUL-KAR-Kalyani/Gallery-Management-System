@@ -23,16 +23,16 @@ const useGetAllAlbum = () => {
             try {
                 let response;
                 if (!isAdmin) {
-                    console.log("userid", user._id);
+                    // console.log("userid", user._id);
                     response = await axios.get(`${import.meta.env.VITE_ALBUM_ENDPOINT}/get/user/${user._id}`, { withCredentials: true });
                 }
                 else {
                     response = await axios.get(`${import.meta.env.VITE_ALBUM_ENDPOINT}/get`, { withCredentials: true });
-                    console.log(response?.data?.album, " all album for admin");
+                    // console.log(response?.data?.album, " all album for admin");
                 }
 
                 if (response?.data?.success) {
-                    console.log(response?.data, " albums to dispatch");
+                    // console.log(response?.data, " albums to dispatch");
                     dispatch(setAlbums(response?.data?.albums))
                 }
 

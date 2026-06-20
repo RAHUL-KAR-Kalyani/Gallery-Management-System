@@ -15,14 +15,12 @@ const useGetSharedAlbum = (token) => {
 			try {
 				const response = await axios.get(`${import.meta.env.VITE_ALBUM_ENDPOINT}/shared/${token}`);
 
-				console.log("full response:", response);
-				console.log("response.data:", response.data);
+				// console.log("full response:", response);
+				// console.log("response.data:", response.data);
 
 				if (response?.data?.success) {
-					console.log("dispatching:", response.data.album);
+					// console.log("dispatching:", response.data.album);
 					dispatch(setSharedAlbum(response.data.album));
-				} else {
-					console.log("Shared album not fetched successfully");
 				}
 			} catch (error) {
 				console.log(error);

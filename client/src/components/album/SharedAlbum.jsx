@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const SharedAlbum = () => {    
     const { token } = useParams();
     const { sharedAlbum } = useSelector((store) => store.album);
-    console.log("token:", token);
+    // console.log("token:", token);
     useGetSharedAlbum(token);
 
     return (
