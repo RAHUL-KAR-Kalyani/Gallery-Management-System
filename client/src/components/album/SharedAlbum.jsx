@@ -39,11 +39,6 @@ const SharedAlbum = () => {
                         <p className="text-sm text-gray-500">Photos</p>
                         <p className="text-2xl font-bold">{sharedAlbum?.images?.length}</p>
                     </div>
-
-                    <div className="rounded-xl border p-4">
-                        <p className="text-sm text-gray-500">Album ID</p>
-                        <p className="truncate text-sm font-medium">{sharedAlbum?._id}</p>
-                    </div>
                 </div>
 
                 {/* Images */}
